@@ -1,11 +1,14 @@
 <template>
-  <h1>App Component</h1>
+  <Dashboard />
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
 
-export default defineComponent({
-  // inferência de tipo habilitada
-})
+<script>
+import Dashboard from './layouts/Dashboard.vue'
+
+export default {
+  name: 'App',
+  components: { Dashboard }
+}
 </script>
+
 <style></style>
