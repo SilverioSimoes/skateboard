@@ -10,5 +10,3 @@ export default {
   components: { Dashboard }
 }
 </script>
-
-<style></style>
