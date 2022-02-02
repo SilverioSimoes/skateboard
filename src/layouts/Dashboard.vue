@@ -20,8 +20,10 @@
         </div>
       </nav>
     </div>
-    <div class="p-5 flex-1">
-      <header class="flex items-center justify-between">
+    <div class="flex-1 h-screen relative overflow-y-auto">
+      <header
+        class="p-5 flex bg-gray-800 z-20 sticky top-0 items-center justify-between"
+      >
         <InputSearch class="w-96" />
 
         <div class="flex items-center">
@@ -38,15 +40,55 @@
         </div>
       </header>
 
-      <h1 class="font-bold text-4xl mt-6 mb-4">Discover</h1>
+      <div class="px-5 pb-5 content">
+        <h1 class="font-bold text-4xl mt-6 mb-4">Discover</h1>
 
-      <div class="grid grid-cols-12">
-        <div class="rounded-xl col-span-8 h-64 border border-red-500">
-          <img
-            src="https://via.placeholder.com/2000x1400"
-            alt=""
-            class="object-cover"
-          />
+        <div class="grid gap-4 grid-cols-12">
+          <div class="col-span-8 h-96 rounded-3xl overflow-hidden relative">
+            <div class="flex w-full h-full">
+              <img
+                src="https://via.placeholder.com/2000x1400"
+                alt=""
+                class="w-full object-cover"
+              />
+              <div class="z-10 absolute top-0 p-6 bottom-0 w-full">
+                <h3 class="text-2xl max-w-xs">
+                  How to do Basic Jumping and how to landing to safely
+                </h3>
+                <p
+                  class="absolute right-6 bottom-6 px-2 py-1 rounded-lg bg-gray-800 text-white"
+                >
+                  7 minutes
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-4 h-96 rounded-3xl overflow-hidden relative">
+            <div class="flex w-full h-full">
+              <img
+                src="https://via.placeholder.com/2000x1400"
+                alt=""
+                class="w-full object-cover"
+              />
+              <div class="z-10 absolute top-0 p-6 bottom-0 w-full">
+                <h3 class="text-2xl max-w-xs">
+                  How to do Basic Jumping and how to landing to safely
+                </h3>
+                <p
+                  class="absolute right-6 bottom-6 px-2 py-1 rounded-lg bg-gray-800 text-white"
+                >
+                  7 minutes
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="text-2xl mt-6 mb-4">Most Watched</h1>
+
+        <div class="grid grid-cols-4 gap-4">
+          <CardItem v-for="n of 10" :key="n" />
         </div>
       </div>
     </div>
@@ -61,10 +103,12 @@ import InputSearch from '../components/inputs/InputSearch.vue'
 import Avatar from '../components/Avatar.vue'
 import ChevronDownIcon from '../components/icons/ChevronDownIcon.vue'
 import BellIcon from '../components/icons/BellIcon.vue'
+import CardItem from '../components/CardItem.vue'
 
 export default {
   name: 'Dashboard',
   components: {
+    CardItem,
     MenuItem,
     HomeIcon,
     TrendingUpIcon,
